@@ -1,0 +1,40 @@
+# Ignore data folders
+data/
+datas/
+
+# Ignore all CSV files
+*.csv
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# VSCode settings
+.vscode/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and outputs
+*.log
+*.out
+
+# Ignore model weights or large binary files
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.onnx
