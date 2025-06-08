@@ -93,6 +93,6 @@ A **theme** represents a recurring idea or concern within customer reviews. Them
 
 ---
 
-📂 **Output**
+output
 
 Cleaned and annotated data is saved to:
