@@ -96,3 +96,47 @@ A **theme** represents a recurring idea or concern within customer reviews. Them
 output
 
 Cleaned and annotated data is saved to:
+
+
+
+
+# Oracle Database Integration for Bank Review Data
+
+This notebook demonstrates how to connect to an Oracle database using Python, create a review table, insert cleaned customer review data from a CSV file, and fetch the data for analysis.
+
+## ⚙️ Oracle DB Workflow
+
+1. **Connect to Oracle DB**  
+   Use `oracledb` Python package to establish a connection with your Oracle database.
+
+2. **Create Review Table**  
+   The `Review_Banks` table includes the following columns:
+   - `Short_Review` (text)
+   - `Cleaned_Review` (text)
+   - `Sentiment` (positive/neutral/negative)
+   - `Sentiment_Score` (decimal)
+   - `Theme` (category/topic)
+   - `Bank` (bank name)
+   - `Rating` (numeric)
+   - `Review_Date` (date)
+   - `Source` (data source)
+
+3. **Insert Data from CSV**  
+   - Load the `bank_review_sentiment_theme.csv` file with Pandas.
+   - Iterate through rows and insert into the Oracle DB with error handling (e.g., `DPY-4004: invalid number`).
+
+4. **View Data with Pandas**  
+   - Execute SQL queries to fetch and load data into a DataFrame for inspection and analysis.
+
+## 🛠 Requirements
+
+- Oracle DB set up and running
+- Python packages: `pandas`, `oracledb`
+- CSV file located at `../data/processed/bank_review_sentiment_theme.csv`
+
+## ✅ Example Query
+
+```python
+query = "SELECT * FROM REVIEW_BANKS WHERE ROWNUM <= 10"
+df = pd.read_sql(query, conn)
+df.head()
