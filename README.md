@@ -140,3 +140,84 @@ This notebook demonstrates how to connect to an Oracle database using Python, cr
 query = "SELECT * FROM REVIEW_BANKS WHERE ROWNUM <= 10"
 df = pd.read_sql(query, conn)
 df.head()
+
+
+
+
+# Customer Sentiment Analysis – Task 4
+
+## 📊 Objective
+Analyze customer feedback on mobile banking apps to extract meaningful insights using sentiment analysis and keyword extraction. Visualize trends and recommend improvements.
+
+---
+
+## 🔍 Task Overview
+
+**Description**  
+Derive insights from sentiment trends and themes in user reviews. Visualize results and suggest actionable improvements for app developers and stakeholders.
+
+### ✅ Tasks Performed
+
+- **Sentiment Analysis**
+  - Used `TextBlob` and `VADER` to classify reviews into `positive`, `neutral`, and `negative`.
+  - Created labels based on numerical review scores (positive ≥ 4, negative ≤ 2).
+  
+- **Keyword Extraction**
+  - Used `TfidfVectorizer` to identify top keywords from all, positive, and negative reviews.
+
+- **Insights**
+  - 🔹 **Drivers**: Users appreciated the app’s **speed**, **reliability**, and **ease of use**.
+  - 🔸 **Pain Points**: Frequent **crashes**, **login issues**, and lack of **features** were highlighted.
+  - 🏦 **Bank Comparison**:
+    - CBE had more mentions in negative reviews.
+    - BOA received more positive sentiment around mobile convenience.
+  - ✅ **Improvement Suggestions**:
+    - Add budgeting & expense tracking tools.
+    - Improve app stability and performance.
+  
+- **Ethics**
+  - Considered potential review biases such as:
+    - Over-representation of negative reviews (people tend to share bad experiences more).
+    - Language and demographic factors influencing interpretation.
+
+---
+
+## 📈 Visualizations
+
+### 1. Sentiment Distribution
+Bar chart showing frequency of positive, neutral, and negative reviews.
+
+### 2. Ratings Distribution
+Histogram of review scores (1–5).
+
+### 3. Word Clouds
+- Word cloud of top keywords in **positive** reviews.
+- Word cloud of top keywords in **negative** reviews.
+
+### 4. Bank Comparison (Optional)
+Bar chart comparing review sentiments across different banks.
+
+---
+
+## 🛠️ Tools & Libraries
+- Python
+- NLTK (TextBlob, VADER)
+- Scikit-learn (TfidfVectorizer, MultinomialNB)
+- Matplotlib & Seaborn
+- WordCloud
+- Pandas, NumPy
+
+---
+
+## 🚀 Git & Branching
+
+- Created feature branch: `task-4`
+- Committed:
+  - Jupyter notebook or Python script for analysis
+  - Visualizations (PNG or SVG)
+  - This README file
+- Merged via pull request to `main` after review
+
+---
+
+
